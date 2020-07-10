@@ -1,2 +1,11 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<nav class="navbar navbar-light bg-light ">
+  <h4 class="navbar-brand text-secondary">Hipster restaurant list</h4>
+  <p class="navbar-text text-white"><%= link_to 'goback', restaurants_path%></p>
+</nav>
+<div class="container">
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+</div>

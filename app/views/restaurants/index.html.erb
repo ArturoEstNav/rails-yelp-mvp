@@ -1,6 +1,9 @@
-<h1>Hipster restaurant list</h1>
-<ul>
+<nav class="navbar navbar-light bg-light ">
+  <h4 class="navbar-brand text-secondary">Hipster restaurant list</h4>
+  <p class="navbar-text text-white"><%= link_to 'Add new restaurant', new_restaurant_path%></p>
+</nav>
+<ul class="list-group-flush p-5">
   <% @restaurants.each do |restaurant| %>
-  <li><%= restaurant.name %></li>
+  <li class="list-group-item"><%= link_to restaurant.name, restaurant_path(restaurant.id) %></li>
   <% end %>
 </ul>

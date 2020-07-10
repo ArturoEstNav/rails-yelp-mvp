@@ -1,2 +1,18 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<nav class="navbar navbar-light bg-light ">
+  <h4 class="navbar-brand text-secondary">Hipster restaurant list</h4>
+  <p class="navbar-text text-white"><%= link_to 'goback', restaurants_path%></p>
+</nav>
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p class="text-muted"><%= @restaurant.category %></p>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+  <br>
+  <h3>Reviews</h3>
+  <ul>
+    <% @reviews.each do |review| %>
+    <li><%= review.content %><%= review.rating %></li>
+    <% end %>
+  </ul>
+  <p><%= link_to 'Add a new review', new_restaurant_review_path(@restaurant.id) %></p>
+</div>

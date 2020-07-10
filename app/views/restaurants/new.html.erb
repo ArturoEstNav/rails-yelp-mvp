@@ -1,2 +1,13 @@
-<h1>Restaurants#new</h1>
-<p>Find me in app/views/restaurants/new.html.erb</p>
+<nav class="navbar navbar-light bg-light ">
+  <h4 class="navbar-brand text-secondary">Hipster restaurant list</h4>
+  <p class="navbar-text text-white"><%= link_to 'goback', restaurants_path%></p>
+</nav>
+<div class="container">
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category %>
+    <%= f.submit "Submit restaurant", class: "btn btn-primary" %>
+  <% end %>
+</div>
